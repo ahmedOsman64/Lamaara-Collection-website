@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamaara Collection - Elegance in Every Detail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./lamaara v2.1.jpg" alt="Lamaara Collection Logo" class="logo-image">
+                <h2>Lamaara Collection</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h4>Total: $<span id="cart-total">0.00</span></h4>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Elegance in Every Detail</h1>
+            <p>Discover our curated collection of fashion accessories for the modern woman</p>
+            <button class="cta-btn" onclick="scrollToSection('shop')">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-slider">
+                <div class="promo-slide active">
+                    <div class="promo-content">
+                        <h2>🎉 Special Offer!</h2>
+                        <p>Buy 2 Items, Get 1 Free on Selected Products</p>
+                        <button class="promo-btn" onclick="scrollToSection('shop')">Shop Now</button>
+                    </div>
+                </div>
+                <div class="promo-slide">
+                    <div class="promo-content">
+                        <h2>✨ New Arrivals</h2>
+                        <p>Discover Our Latest Collection - Up to 30% Off</p>
+                        <button class="promo-btn" onclick="scrollToSection('new-arrivals')">Explore</button>
+                    </div>
+                </div>
+                <div class="promo-slide">
+                    <div class="promo-content">
+                        <h2>💝 Gift Wrapping</h2>
+                        <p>Free Gift Wrapping on Orders Over $50</p>
+                        <button class="promo-btn" onclick="scrollToSection('shop')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="promo-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Featured products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="best-sellers">
+        <div class="container">
+            <h2>Best Sellers</h2>
+            <p class="section-subtitle">Our most loved products by customers</p>
+            <div class="products-grid" id="best-sellers">
+                <!-- Best sellers will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="new-arrivals">
+        <div class="container">
+            <h2>New Arrivals</h2>
+            <p class="section-subtitle">Fresh styles just added to our collection</p>
+            <div class="products-grid" id="new-arrivals-grid">
+                <!-- New arrivals will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Beautiful quality products! The handbags are exactly as described and the customer service is amazing."</p>
+                    <h4>- Aisha M.</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Love the jewelry collection! Perfect for everyday wear and special occasions. Highly recommend!"</p>
+                    <h4>- Fatima K.</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The perfume collection is divine! Rose gold packaging is so elegant. Will definitely order again."</p>
+                    <h4>- Zara A.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-feed">
+        <div class="container">
+            <h2>Follow Us on Instagram</h2>
+            <p class="section-subtitle">@lamaaracollection</p>
+            <div class="instagram-grid" id="instagram-grid">
+                <!-- Instagram posts will be loaded here -->
+            </div>
+            <div class="instagram-cta">
+                <a href="#" class="instagram-btn" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    Follow Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for exclusive offers and new arrivals</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2>Our Collection</h2>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="handbags">Handbags</button>
+                <button class="filter-btn" data-category="sunglasses">Sunglasses</button>
+                <button class="filter-btn" data-category="jewelry">Jewelry</button>
+                <button class="filter-btn" data-category="hair-accessories">Hair Accessories</button>
+                <button class="filter-btn" data-category="scarves">Scarves</button>
+                <button class="filter-btn" data-category="perfumes">Perfumes</button>
+                <button class="filter-btn" data-category="gift-sets">Gift Sets</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Lamaara Collection</h2>
+                    <p>Founded with a passion for elegance and style, Lamaara Collection is dedicated to providing high-quality fashion accessories that empower women to express their unique beauty.</p>
+                    <p>Our mission is to offer carefully curated pieces that combine contemporary trends with timeless elegance, ensuring every woman finds something that speaks to her individual style.</p>
+                    <p>From handcrafted jewelry to designer handbags, each item in our collection is selected with care to meet the highest standards of quality and style.</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+252 61 2652163</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+252 61 2652163</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@lamaaracollection.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lamaara Collection</h3>
+                    <p>Elegance in Every Detail</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <a href="#shop">Handbags</a>
+                    <a href="#shop">Jewelry</a>
+                    <a href="#shop">Accessories</a>
+                    <a href="#shop">Perfumes</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lamaara Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content quick-view-content">
+            <div class="modal-header">
+                <h3>Product Details</h3>
+                <button class="close-modal" id="close-quick-view">&times;</button>
+            </div>
+            <div class="quick-view-body" id="quick-view-body">
+                <!-- Quick view content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Guide Modal -->
+    <div class="modal" id="size-guide-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Size Guide</h3>
+                <button class="close-modal" id="close-size-guide">&times;</button>
+            </div>
+            <div class="size-guide-content">
+                <div class="size-tabs">
+                    <button class="size-tab active" data-size="rings">Rings</button>
+                    <button class="size-tab" data-size="necklaces">Necklaces</button>
+                    <button class="size-tab" data-size="bags">Bags</button>
+                </div>
+                <div class="size-table" id="size-table">
+                    <!-- Size guide content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Checkout</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Delivery Address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="gift-wrapping">
+                        <span class="checkmark"></span>
+                        Add Gift Wrapping (+$5.00)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Additional Notes (Optional)" rows="2"></textarea>
+                </div>
+                <button type="submit" class="place-order-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Live Chat Button -->
+    <div class="live-chat-btn" id="live-chat-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
